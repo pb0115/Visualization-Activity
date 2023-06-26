@@ -1,0 +1,32 @@
+---
+title: "Visualization Activity"
+author: "Padmini"
+date: "2023-06-26"
+output: html_document
+---
+
+```{r, include=FALSE, message=FALSE, results=TRUE}
+knitr::opts_chunk$set(echo = FALSE)
+options(warn = -1)
+library(ggplot2)
+library(dplyr)
+```
+
+```{r}
+# Load the dataset
+data <- read.csv("C:\\Users\\Dell\\Downloads\\customer_support_tickets.csv")
+# Plot a histogram of the "Ticket Priority" variable
+ggplot(data, aes(x = Ticket.Priority)) +
+  geom_bar(fill = "red", color = "black") +
+  labs(title = "Histogram of Ticket Priority Distribution",
+       x = "Ticket Priority",
+       y = "Count")
+
+# Plot a scatter plot of Ticket Priority vs. Ticket Channel
+ggplot(data, aes(x = Ticket.Priority, y = Ticket.Channel)) +
+  geom_point() +
+  labs(title = "Scatter Plot of Ticket Priority and Ticket Channel",
+       x = "Ticket Priority",
+       y = "Ticket Channel")
+```
+
